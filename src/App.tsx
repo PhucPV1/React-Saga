@@ -1,10 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
+import NotFound from 'components/Common/NotFound';
+import PrivateRoute from 'components/Common/PrivateRoute';
+import AdminLayout from 'components/Layout/Admin';
+import LoginPage from 'features/auth/pages/LoginPage';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import { Counter } from './features/counter/Counter';
+import logo from './logo.svg';
 
 function App() {
   return (
+    <>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -51,7 +56,16 @@ function App() {
           </a>
         </span>
       </header>
-    </div>
+      </div>
+    {/* <div>
+      <Routes>
+        <Route path='/login/:id' element={<div>id</div>} />
+        <Route path='/login' element={<LoginPage />} />
+        <PrivateRoute  path='/admin' element={<AdminLayout />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
+    </div> */}
+    </>
   );
 }
 
